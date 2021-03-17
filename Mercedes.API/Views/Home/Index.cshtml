@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 style="font-size: 30px; margin-top: 100px">COWDY</h1>
+
+<script>
+    myFunction();
+    function myFunction() {
+        $.ajax({
+            url: 'home',
+            type: 'get',
+            data: {
+                format: 'json'
+            },
+            success: function (data) {
+                console.log(data);
+                if (data != null) {
+                    console.log(data);
+                }
+            },
+            error: function (e) {
+                console.log(e.message);
+            }
+        });
+    }
+
+</script>
+
+
