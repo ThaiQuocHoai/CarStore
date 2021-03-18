@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercedes.WebApp", "Mercedes.WebApp\Mercedes.WebApp.csproj", "{D94B2662-DB49-49CB-949E-94DB4822C3D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercedes.WebApp", "Mercedes.WebApp\Mercedes.WebApp.csproj", "{D94B2662-DB49-49CB-949E-94DB4822C3D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercedes.DataService", "Mercedes.DataService\Mercedes.DataService.csproj", "{C64AAC37-EAE9-4975-B185-851BDB23E2E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercedes.DataService", "Mercedes.DataService\Mercedes.DataService.csproj", "{C64AAC37-EAE9-4975-B185-851BDB23E2E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercedes.Application", "Mercedes.Application\Mercedes.Application.csproj", "{A80E9CFF-3F29-486B-8388-D92EA4D34B14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mercedes.Application", "Mercedes.Application\Mercedes.Application.csproj", "{A99EEB07-DD23-48B2-96F1-CE30F2930DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercedes.Utilities", "Mercedes.Utilities\Mercedes.Utilities.csproj", "{BA90A8FD-D459-41FA-8F01-D6DAFD3BAA41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,14 @@ Global
 		{C64AAC37-EAE9-4975-B185-851BDB23E2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C64AAC37-EAE9-4975-B185-851BDB23E2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C64AAC37-EAE9-4975-B185-851BDB23E2E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A80E9CFF-3F29-486B-8388-D92EA4D34B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A80E9CFF-3F29-486B-8388-D92EA4D34B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A80E9CFF-3F29-486B-8388-D92EA4D34B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A80E9CFF-3F29-486B-8388-D92EA4D34B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99EEB07-DD23-48B2-96F1-CE30F2930DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99EEB07-DD23-48B2-96F1-CE30F2930DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99EEB07-DD23-48B2-96F1-CE30F2930DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99EEB07-DD23-48B2-96F1-CE30F2930DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA90A8FD-D459-41FA-8F01-D6DAFD3BAA41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA90A8FD-D459-41FA-8F01-D6DAFD3BAA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA90A8FD-D459-41FA-8F01-D6DAFD3BAA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA90A8FD-D459-41FA-8F01-D6DAFD3BAA41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
