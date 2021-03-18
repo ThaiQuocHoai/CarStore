@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "MercedesDb" : "Server=QH;Database=Mercedes;User Id=sa;Password=1"
+  }
+}
