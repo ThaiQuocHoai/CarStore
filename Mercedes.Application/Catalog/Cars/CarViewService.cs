@@ -11,13 +11,30 @@ using System.Threading.Tasks;
 
 namespace Mercedes.Application.Catalog.Cars
 {
-    class CarViewService : ICarViewService
+    public class CarViewService : ICarViewService
     {
         private readonly MercedesDbContext _context;
 
         public CarViewService(MercedesDbContext context)
         {
             _context = context;
+        }
+
+        public Task<List<ProductViewModels>> GetAll()
+        {
+            var query = _context.Cars.Where(c => c.Status == true);
+            var data = query.Select(x => new ProductViewModels()
+            {
+                CarId = x.CarId,
+                Name = x.Name,
+                Color = x.Color,
+                Price = x.Price,
+                Quantity = x.Quantity,
+                Image = x.Image,
+                CategoryID = x.CategoryID,
+                Status = x.Status
+            }).ToListAsync();
+            return data;
         }
 
         public async Task<CarViewModels<ProductViewModels>> GetAllCarPaging(int Cate, string SearchValue, int Index, int PageSize)
@@ -48,5 +65,7 @@ namespace Mercedes.Application.Catalog.Cars
             };
             return result;
         }
+
+
     }
 }

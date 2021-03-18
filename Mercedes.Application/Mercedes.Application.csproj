@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mercedes.DataService\Mercedes.DataService.csproj" />
+    <ProjectReference Include="..\Mercedes.Utilities\Mercedes.Utilities.csproj" />
   </ItemGroup>
 
 </Project>
