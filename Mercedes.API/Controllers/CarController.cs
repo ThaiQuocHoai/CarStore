@@ -1,4 +1,5 @@
 ﻿using Mercedes.Application.Catalog.Cars;
+using Mercedes.Application.Catalog.Cars.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,16 +14,30 @@ namespace Mercedes.API.Controllers
     public class CarController : ControllerBase
     {
         private readonly ICarViewService _carViewService;
-        public CarController(ICarViewService carViewService)
+        private readonly ICarManagerService _carManagerService;
+
+        public CarController(ICarViewService carViewService, ICarManagerService carManagerService)
         {
             _carViewService = carViewService;
+            _carManagerService = carManagerService;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("get-car-search-filer")]
+        public async Task<IActionResult> Get(int Cate, int Index=1, int PageSize=10, string SearchValue="")
         {
-            var cars = await _carViewService.GetAll();
-            return Ok(cars);
+            var cars = await _carViewService.GetAllCarPaging(Cate, SearchValue, Index, PageSize);
+            return Ok(cars.ToList());
+        }
+
+        [HttpPost("create-new-car")]
+        public async Task<IActionResult> CreateCar([FromBody] CreateCarRequest request)
+        {
+            var car = await _carManagerService.CreateCar(request);
+            if(car == 0)
+            {
+                return BadRequest();
+            }
+            return Ok(car);
         }
     }
 }

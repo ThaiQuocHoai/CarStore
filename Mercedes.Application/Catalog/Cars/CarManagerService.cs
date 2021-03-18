@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Mercedes.Application.Catalog.Cars
 {
-    class CarManagerService : ICarManagerService
+    public class CarManagerService : ICarManagerService
     {
         private readonly MercedesDbContext _context;
 
@@ -23,9 +23,17 @@ namespace Mercedes.Application.Catalog.Cars
 
         public async Task<int> CreateCar(CreateCarRequest request)
         {
-            
-            var car = new Car() 
+
+            var car = new Car()
             {
+                Name = request.Name,
+                Color = request.Color,
+                Price = request.Price,
+                Quantity = request.Quantity,
+                Image = request.Image,
+                Decription = request.Decription,
+                CategoryID = request.CategoryID,
+                Status = true,
 
             };
             _context.Cars.Add(car);

@@ -32,6 +32,8 @@ namespace Mercedes.API
                    options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
             //declare DI
             services.AddTransient<ICarViewService, CarViewService>();
+            services.AddTransient<ICarManagerService, CarManagerService>();
+
             services.AddControllersWithViews();
             services.AddSwaggerGen(c =>
             {

@@ -9,7 +9,6 @@ namespace Mercedes.Application.Catalog.Cars
 {
     public interface ICarViewService
     {
-        Task<CarViewModels<ProductViewModels>> GetAllCarPaging(int Cate, string SearchValue, int Index, int PageSize);
-        Task<List<ProductViewModels>> GetAll();
+        Task<List<ProductViewModels>> GetAllCarPaging(int Cate, string SearchValue, int Index, int PageSize);
     }
 }

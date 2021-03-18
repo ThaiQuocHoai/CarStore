@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercedes.Utilities", "Merce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercedes.API", "Mercedes.API\Mercedes.API.csproj", "{80ED34AA-C4D5-4843-BBF5-6D21EBF7F831}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Infrastructer", "1.Infrastructer", "{47D9E361-A8BB-4753-9567-6D509917DC77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{0A9B3E5D-DEA5-48F0-A4DC-7CDFCFD4948B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Hosts", "3.Hosts", "{C860E146-3CF5-43CB-963F-E00F93E83E05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +48,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D94B2662-DB49-49CB-949E-94DB4822C3D6} = {C860E146-3CF5-43CB-963F-E00F93E83E05}
+		{C64AAC37-EAE9-4975-B185-851BDB23E2E7} = {0A9B3E5D-DEA5-48F0-A4DC-7CDFCFD4948B}
+		{A99EEB07-DD23-48B2-96F1-CE30F2930DE5} = {C860E146-3CF5-43CB-963F-E00F93E83E05}
+		{BA90A8FD-D459-41FA-8F01-D6DAFD3BAA41} = {47D9E361-A8BB-4753-9567-6D509917DC77}
+		{80ED34AA-C4D5-4843-BBF5-6D21EBF7F831} = {0A9B3E5D-DEA5-48F0-A4DC-7CDFCFD4948B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F05D344-8E21-4D11-8443-8DF001A3B3FC}
