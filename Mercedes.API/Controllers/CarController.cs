@@ -1,5 +1,6 @@
 ﻿using Mercedes.Application.Catalog.Cars;
 using Mercedes.Application.Catalog.Cars.Dtos;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mercedes.API.Controllers
 {
+    [EnableCors("_myAllowSpecificOrigins")]
     [Route("api/[controller]")]
     [ApiController]
     public class CarController : ControllerBase
@@ -23,7 +25,7 @@ namespace Mercedes.API.Controllers
         }
 
         [HttpGet("get-car-search-filer")]
-        public async Task<IActionResult> Get(int Cate, int Index=1, int PageSize=10, string SearchValue="")
+        public async Task<IActionResult> Get(int Cate, int Index = 1, int PageSize = 10, string SearchValue = "")
         {
             var cars = await _carViewService.GetAllCarPaging(Cate, SearchValue, Index, PageSize);
             return Ok(cars.ToList());
@@ -40,7 +42,29 @@ namespace Mercedes.API.Controllers
         public async Task<IActionResult> CreateCar([FromBody] CreateCarRequest request)
         {
             var car = await _carManagerService.CreateCar(request);
-            if(car == 0)
+            if (car == 0)
+            {
+                return BadRequest();
+            }
+            return Ok(car);
+        }
+
+        [HttpPut("Update-car")]
+        public async Task<IActionResult> UpdateCar([FromBody] UpdateCarRequest request)
+        {
+            var car = await _carManagerService.UpdateCar(request);
+            if (car == 0)
+            {
+                return BadRequest();
+            }
+            return Ok(car);
+        }
+
+        [HttpPut("Delete-car")]
+        public async Task<IActionResult> DeleteCar(int CarID)
+        {
+            var car = await _carManagerService.DeleteCar(CarID);
+            if (car == 0)
             {
                 return BadRequest();
             }

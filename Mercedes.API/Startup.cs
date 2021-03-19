@@ -26,10 +26,10 @@ namespace Mercedes.API
 
         public IConfiguration Configuration { get; }
 
-        private string[] GetDomain()
+        private string GetDomain()
         {
             var domains = Configuration.GetSection("Domain").Get<Dictionary<string, string>>().Select(s => s.Value).ToArray();
-            return domains;
+            return domains[0];
 
         }
 
@@ -44,10 +44,8 @@ namespace Mercedes.API
                     builder =>
                     {
                         builder
-                        .WithOrigins(GetDomain())
-                        //.AllowAnyOrigin()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
+                        .WithOrigins("http://localhost:5001",GetDomain())
+                        .WithMethods("GET","POST","PUT","DELETE");
                     });
             });
             //declare DI
