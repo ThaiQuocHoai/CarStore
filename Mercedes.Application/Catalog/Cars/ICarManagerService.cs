@@ -13,6 +13,6 @@ namespace Mercedes.Application.Catalog.Cars
         Task<int> UpdateCar(UpdateCarRequest request);
         Task<int> DeleteCar(int CarID);
 
-        Task<CarViewModels<ProductViewModels>> GetAllPaging(int Cate, string SearchValue, int Index, int PageSize);
+        Task<List<ProductViewModels>> GetAllPaging(int Cate, string SearchValue, int Index, int PageSize);
     }
 }

@@ -29,6 +29,13 @@ namespace Mercedes.API.Controllers
             return Ok(cars.ToList());
         }
 
+        [HttpGet("get-car-search-filer-admin-page")]
+        public async Task<IActionResult> GetCarAdmin(int Cate, int Index = 1, int PageSize = 10, string SearchValue = "")
+        {
+            var cars = await _carManagerService.GetAllPaging(Cate, SearchValue, Index, PageSize);
+            return Ok(cars.ToList());
+        }
+
         [HttpPost("create-new-car")]
         public async Task<IActionResult> CreateCar([FromBody] CreateCarRequest request)
         {

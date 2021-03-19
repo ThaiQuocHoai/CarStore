@@ -49,7 +49,7 @@ namespace Mercedes.Application.Catalog.Cars
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<CarViewModels<ProductViewModels>> GetAllPaging(int Cate, string SearchValue, int Index, int PageSize)
+        public async Task<List<ProductViewModels>> GetAllPaging(int Cate, string SearchValue, int Index, int PageSize)
         {
             var query = _context.Cars.Where(c => c.CategoryID == Cate && c.Name.Contains(SearchValue));
             if (query == null) throw new MercedesException("Cannot find a product");
@@ -70,12 +70,7 @@ namespace Mercedes.Application.Catalog.Cars
                 CategoryID = x.CategoryID,
                 Status = x.Status
             }).ToListAsync();
-            var result = new CarViewModels<ProductViewModels>()
-            {
-                TotalRecord = EndPage,
-                Items = data,
-            };
-            return result;
+            return data;
         }
 
         public async Task<int> UpdateCar(UpdateCarRequest request)
