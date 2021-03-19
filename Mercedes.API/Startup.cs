@@ -22,14 +22,34 @@ namespace Mercedes.API
         {
             Configuration = configuration;
         }
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public IConfiguration Configuration { get; }
+
+        private string[] GetDomain()
+        {
+            var domains = Configuration.GetSection("Domain").Get<Dictionary<string, string>>().Select(s => s.Value).ToArray();
+            return domains;
+
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MercedesDbContext>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder
+                        .WithOrigins(GetDomain())
+                        //.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+            });
             //declare DI
             services.AddTransient<ICarViewService, CarViewService>();
             services.AddTransient<ICarManagerService, CarManagerService>();
@@ -58,7 +78,7 @@ namespace Mercedes.API
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseCors();
             app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
