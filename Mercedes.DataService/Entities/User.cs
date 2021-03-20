@@ -16,7 +16,7 @@ namespace Mercedes.DataService.Entities
         public DateTime BirthDate { get; set; }
         public DateTime CreateDate { get; set; }
         public string RoleID { get; set; }
-        public Status Status { get; set; }
+        public int Status { get; set; }
 
         public Role Role { get; set; }
         public List<Order> Orders { get; set; }

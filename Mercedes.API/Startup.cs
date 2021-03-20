@@ -1,4 +1,5 @@
 using Mercedes.Application.Catalog.Cars;
+using Mercedes.Application.System;
 using Mercedes.DataService.EntityFramework;
 using Mercedes.Utilities.Constant;
 using Microsoft.AspNetCore.Builder;
@@ -51,6 +52,8 @@ namespace Mercedes.API
             //declare DI
             services.AddTransient<ICarViewService, CarViewService>();
             services.AddTransient<ICarManagerService, CarManagerService>();
+            services.AddTransient<IUserService, UserService>();
+
 
             services.AddControllersWithViews();
             services.AddSwaggerGen(c =>
