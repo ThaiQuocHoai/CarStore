@@ -23,14 +23,18 @@
   top: 20%;
   left: 40%;
   width: 350px;
-  padding: 40px 60px;
+  padding: 25px  60px;
   background: #131419;
   border-radius: 10px;
   text-align: center;
   box-shadow: -5px -5px 10px rgba(255,255,255,0.05), -5px -5px 15px rgba(0,0,0,0.5);
 }
 
-.form h2 {
+.form .head img{
+  padding-bottom: 15px;
+}
+
+.form .head h2 {
   color: #c7c7c7;
   font-weight: 500;
   text-transform: uppercase;
@@ -42,9 +46,9 @@
   margin-top: 40px;
 }
 
-.form .input .inputBox {
+/* .form .input .inputBox {
   margin-top: 20px;
-}
+} */
 
 .form .input .inputBox label {
   display: block;

@@ -3,17 +3,17 @@ var renderCar = function (arrCar) {
   for (let i = 0; i < arrCar.length; i++) {
     var item = arrCar[i];
     // console.log(item.carId);
-    var car = new Car(
-      item.carId,
-      item.name,
-      item.color,
-      item.price,
-      item.quantity,
-      item.image,
-      item.decription,
-      item.categoryID,
-      item.status
-    );
+    // var car = new Car(
+    //   item.carId,
+    //   item.name,
+    //   item.color,
+    //   item.price,
+    //   item.quantity,
+    //   item.image,
+    //   item.decription,
+    //   item.categoryID,
+    //   item.status
+    // );
     content += `
           <a href="#">
             <div class="car__item">
