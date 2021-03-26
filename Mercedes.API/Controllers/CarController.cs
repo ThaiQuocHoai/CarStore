@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mercedes.API.Controllers
 {
-    [EnableCors("_myAllowSpecificOrigins")]
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class CarController : ControllerBase
@@ -39,9 +39,9 @@ namespace Mercedes.API.Controllers
         }
 
         [HttpPost("create-new-car")]
-        public async Task<IActionResult> CreateCar([FromBody] CreateCarRequest request)
+        public async Task<IActionResult> CreateCar(string Name, string Color, float Price, int Quantity, string Image, string Decription, int CategoryID)
         {
-            var car = await _carManagerService.CreateCar(request);
+            var car = await _carManagerService.CreateCar(Name, Color, Price, Quantity, Image, Decription, CategoryID);
             if (car == 0)
             {
                 return BadRequest();
@@ -50,9 +50,9 @@ namespace Mercedes.API.Controllers
         }
 
         [HttpPut("Update-car")]
-        public async Task<IActionResult> UpdateCar([FromBody] UpdateCarRequest request)
+        public async Task<IActionResult> UpdateCar(int CarId, string Name, string Color, float Price, int Quantity, string Image, string Decription, int CategoryID, bool Status)
         {
-            var car = await _carManagerService.UpdateCar(request);
+            var car = await _carManagerService.UpdateCar(CarId, Name, Color, Price, Quantity, Image, Decription, CategoryID, Status);
             if (car == 0)
             {
                 return BadRequest();
@@ -67,6 +67,17 @@ namespace Mercedes.API.Controllers
             if (car == 0)
             {
                 return BadRequest();
+            }
+            return Ok(car);
+        }
+
+        [HttpGet("find-by-id")]
+        public async Task<IActionResult> FindById(int CarID)
+        {
+            var car = await _carManagerService.FindById(CarID);
+            if (car == null)
+            {
+                return BadRequest("Cannot find car");
             }
             return Ok(car);
         }

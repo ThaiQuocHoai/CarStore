@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mercedes.API.Controllers
 {
-    [EnableCors("_myAllowSpecificOrigins")]
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase

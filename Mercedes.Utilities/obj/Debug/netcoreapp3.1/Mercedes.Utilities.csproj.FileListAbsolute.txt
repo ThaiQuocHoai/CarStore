@@ -1,0 +1,9 @@
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\bin\Debug\netcoreapp3.1\Mercedes.Utilities.deps.json
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\bin\Debug\netcoreapp3.1\Mercedes.Utilities.dll
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\bin\Debug\netcoreapp3.1\Mercedes.Utilities.pdb
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\obj\Debug\netcoreapp3.1\Mercedes.Utilities.csprojAssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\obj\Debug\netcoreapp3.1\Mercedes.Utilities.AssemblyInfoInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\obj\Debug\netcoreapp3.1\Mercedes.Utilities.AssemblyInfo.cs
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\obj\Debug\netcoreapp3.1\Mercedes.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\obj\Debug\netcoreapp3.1\Mercedes.Utilities.dll
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.Utilities\obj\Debug\netcoreapp3.1\Mercedes.Utilities.pdb

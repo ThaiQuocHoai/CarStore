@@ -1,0 +1,12 @@
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\bin\Debug\netcoreapp3.1\Mercedes.DataService.deps.json
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\bin\Debug\netcoreapp3.1\Mercedes.DataService.runtimeconfig.json
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\bin\Debug\netcoreapp3.1\Mercedes.DataService.runtimeconfig.dev.json
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\bin\Debug\netcoreapp3.1\Mercedes.DataService.dll
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\bin\Debug\netcoreapp3.1\Mercedes.DataService.pdb
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.csprojAssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.AssemblyInfoInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.AssemblyInfo.cs
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.dll
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.pdb
+C:\Users\ASUS\OneDrive\Máy tính\api\Mercedes.DataService\obj\Debug\netcoreapp3.1\Mercedes.DataService.genruntimeconfig.cache

@@ -41,12 +41,12 @@ namespace Mercedes.API
                    options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
             services.AddCors(options =>
             {
-                options.AddPolicy(MyAllowSpecificOrigins,
+                options.AddPolicy(name: "MyPolicy",
                     builder =>
                     {
-                        builder
-                        .WithOrigins("http://localhost:5001",GetDomain())
-                        .WithMethods("GET","POST","PUT","DELETE");
+                        builder.WithOrigins("http://localhost:5001",
+                                           "http://127.0.0.1:5501", "http://127.0.0.1:5500")
+                                .WithMethods("PUT", "DELETE", "GET", "POST");
                     });
             });
             //declare DI

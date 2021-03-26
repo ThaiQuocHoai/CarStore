@@ -9,10 +9,11 @@ namespace Mercedes.Application.Catalog.Cars
 {
     public interface ICarManagerService
     {
-        Task<int> CreateCar(CreateCarRequest request);
-        Task<int> UpdateCar(UpdateCarRequest request);
+        Task<int> CreateCar(string Name, string Color, float Price, int Quantity, string Image, string Decription, int CategoryID);
+        Task<int> UpdateCar(int CarId, string Name, string Color, float Price, int Quantity, string Image, string Decription, int CategoryID, bool Status);
         Task<int> DeleteCar(int CarID);
 
+        Task<ProductViewModels> FindById(int CarID);
         Task<List<ProductViewModels>> GetAllPaging(int Cate, string SearchValue, int Index, int PageSize);
     }
 }
