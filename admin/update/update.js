@@ -8,6 +8,7 @@ var displayCar = function (car) {
     `;
   document.querySelector(".col-5").innerHTML = col4;
   col8 = `
+  <form action="/admin/manager/manage.html">
     <h2 class="mb-3">Details of car</h2>
         <table class="table">
             <thead>
@@ -71,10 +72,11 @@ var displayCar = function (car) {
             </thead>
         </table>
         <button type="submit" class="btn btn-success" onclick="UpdateFunction()">Update</button>
+        </form>
     `;
   document.querySelector(".col-7").innerHTML = col8;
 };
-//  
+//
 var display = function () {
   var link = window.location.href;
   var id = link.split("?")[1];
@@ -94,29 +96,50 @@ var display = function () {
 
 display();
 
-
 function UpdateFunction() {
-    var carId = document.querySelector('#txtID').value;
-    var carname = document.querySelector('#txtName').value;
-    var color = document.querySelector('#txtColor').value;
-    var price = document.querySelector('#txtPrice').value;
-    var quantity = document.querySelector('#txtQuantity').value;
-    var image = document.querySelector('#txtImage').value;
-    var decription = document.querySelector('#txtDescription').value;
-    var categoryID = document.querySelector('#txtCate').value;
-    var status = document.querySelector('#txtStatus').value;
-    
-    var car = new Car(carId,carname,color,price,quantity,image,decription,categoryID,status);
+  var carId = document.querySelector("#txtID").value;
+  var carname = document.querySelector("#txtName").value;
+  var color = document.querySelector("#txtColor").value;
+  var price = document.querySelector("#txtPrice").value;
+  var quantity = document.querySelector("#txtQuantity").value;
+  var image = document.querySelector("#txtImage").value;
+  var decription = document.querySelector("#txtDescription").value;
+  var categoryID = document.querySelector("#txtCate").value;
+  var status = document.querySelector("#txtStatus").value;
 
-    console.log(car);
-    axios({
-        url: 'https://localhost:5001/api/Car/Update-car',
-        method: 'PUT',
-        data: car,
-        responseType: 'json',
-    }).then(function(result){
-        console.log(result.data);
-    }).catch(function(error){
-        console.log(error);
+//   var car = new Car(
+//     carId,
+//     carname,
+//     color,
+//     price,
+//     quantity,
+//     image,
+//     decription,
+//     categoryID,
+//     status
+//   );
+
+  axios({
+    url: `https://localhost:5001/api/Car/Update-car?CarId=${carId}&Name=${carname}&Color=${color}&Price=${price}&Quantity=${quantity}&Image=${image}&Decription=${decription}&CategoryID=${categoryID}&Status=${status}`,
+    method: "PUT",
+    // data: //car,
+    // {
+    //   "carId": carId,
+    //   "name": carname,
+    //   "color": color,
+    //   "price": price,
+    //   "quantity": quantity,
+    //   "image": image,
+    //   "decription": decription,
+    //   "categoryID": categoryID,
+    //   "status": status,
+    // },
+    responseType: "json",
+  })
+    .then(function (result) {
+      console.log(result.data);
     })
+    .catch(function (error) {
+      console.log(error);
+    });
 }

@@ -58,7 +58,7 @@ function myFunction() {
 var displayManager = function () {
   axios({
     url:
-      "https://localhost:5001/api/Car/get-car-search-filer?Cate=1&Index=1&PageSize=100",
+      "https://localhost:5001/api/Car/get-car-search-filer-admin-page?Cate=1&Index=1&PageSize=100",
     method: "GET",
     responseType: "json",
   })
@@ -70,8 +70,6 @@ var displayManager = function () {
       console.log(error);
     });
 };
-
-displayManager();
 
 function deleteFunction(id) {
     // console.log(id);
@@ -93,3 +91,5 @@ function deleteFunction(id) {
 function updateFunction(id){
     window.location.href = `http://127.0.0.1:5501/admin/update/update.html?${id}`;
 }
+
+displayManager();
