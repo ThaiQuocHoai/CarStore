@@ -71,7 +71,10 @@ var displayCar = function (car) {
                 </tr>
             </thead>
         </table>
+        <div>
+        <a href="../manager/manage.html"></a>
         <button type="submit" class="btn btn-success" onclick="UpdateFunction()">Update</button>
+        </div>
         </form>
     `;
   document.querySelector(".col-7").innerHTML = col8;
